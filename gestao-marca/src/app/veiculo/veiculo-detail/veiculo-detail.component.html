@@ -1,0 +1,13 @@
+<div class="row justify-content-center mt-2">
+    <div class="col-lg-4 col-md-4 col-sm-4">
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title text-success">{{ veiculo?.placa}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted text-info">{{ veiculo?.cor}}</h6>
+    <h7 class="card-subtitle mb-2 text-muted text-info">{{ veiculo?.anoModelo}}</h7>
+    <p class="card-text text-primary">{{ veiculo?.marca }}</p>
+    <a [routerLink]="['/lista-marca']" class="card-link"><i class="fa fa-arrow-left"></i></a>
+    </div>
+    </div>
+    </div>
+   </div>

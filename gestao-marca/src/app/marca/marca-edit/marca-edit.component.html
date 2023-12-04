@@ -1,0 +1,69 @@
+<h3 class="text-center">Altere as informações da marca</h3>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div [hidden]="updated" style="width: 400px">
+      <form [formGroup]="marcaForm" (submit)="update()">
+        <div class="form-group">
+          <label for="sigla">Sigla</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="sigla"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Digite a sigla da marca"
+            name="sigla" [(ngModel)]="marca!.sigla"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="
+              marcaForm.get('sigla')?.touched && marcaForm.get('sigla')?.invalid
+            "
+            style="margin-top: 5px"
+          >
+            <span *ngIf="marcaForm.get('sigla')?.errors?.['required']"
+              >Sigla da marca é obrigatório</span
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="descricao"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Digite a descrição da marca"
+            name="descricao" [(ngModel)]="marca!.descricao"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="
+              marcaForm.get('descricao')?.touched && marcaForm.get('descricao')?.invalid
+            "
+            style="margin-top: 5px"
+          >
+            <span *ngIf="marcaForm.get('sigla')?.errors?.['required']"
+              >Descrição da marca é obrigatório</span
+            >
+          </div>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-success">Salvar</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div [hidden]="!updated">
+      <h5 class="text-success">Marca alterada com sucesso</h5>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
